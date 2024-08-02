@@ -48,7 +48,7 @@ const HW1 = () => {
     return (
         <div id={'hw1'} className={s2.hw_1}>
             <div className={s2.hwTitle}>Hometask № 1</div>
-            <div className={s2.hw}>
+            <div className={`${s2.hw} ${s2.hw_1}`}>
                 <div>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
