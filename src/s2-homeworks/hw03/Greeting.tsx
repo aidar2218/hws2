@@ -1,4 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
+
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
@@ -13,7 +14,7 @@ type GreetingPropsType = {
 }
 
 // презентационная компонента (для верстальщика)
-const Greeting: React.FC<GreetingPropsType> = (
+export const Greeting: React.FC<GreetingPropsType> = (
     {
         name,
         setNameCallback,
@@ -25,7 +26,10 @@ const Greeting: React.FC<GreetingPropsType> = (
         lastUserName,
     } // деструктуризация пропсов
 ) => {
-    const inputClass = `${s.input} ${error ? s.errorInput : ""}`;
+    /**
+     * Переменная возвращает строчку с классом инпута, и если есть ошибка - ещё и класс инпута с ошибкой
+     */
+    const inputClass = `${s.input} ${error ? s.errorInput : ''}`
 
     return (
         <div id={'hw3-form'} className={s.greetingForm}>
@@ -69,5 +73,3 @@ const Greeting: React.FC<GreetingPropsType> = (
         </div>
     )
 }
-
-export default Greeting

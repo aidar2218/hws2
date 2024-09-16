@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export const Junior = () => {
+export const Junior: React.FC = () => {
     return (
         <div id={'hw5-page-junior'}>
             {/*<HW6 />*/}

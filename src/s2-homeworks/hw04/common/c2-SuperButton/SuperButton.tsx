@@ -9,7 +9,7 @@ type SuperButtonPropsType = DefaultButtonPropsType & {
     xType?: string
 }
 
-const SuperButton: React.FC<SuperButtonPropsType> = (
+export const SuperButton: React.FC<SuperButtonPropsType> = (
     {
         xType,
         className,
@@ -20,15 +20,15 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
     const finalClassName = `
    ${s.button} ${xType === 'red' ? s.red : xType === 'secondary' ? s.secondary : s.default}
    ${disabled ? s.disabled : ''} ${className ? ' ' + className : ''}
-   `.trim();
+   `.trim()
 
     return (
         <button
             disabled={disabled}
             className={finalClassName}
-            {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
+            {...restProps}
         />
     )
 }
 
-export default SuperButton
+export default SuperButton;
