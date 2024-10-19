@@ -11,7 +11,7 @@ import s from './HW6.module.css'
  * 3 - сделать стили в соответствии с дизайном
  */
 
-const HW6 = () => {
+export const HW6 = () => {
     const [value, setValue] = useState<string>('')
 
     const save = () => {
@@ -19,7 +19,7 @@ const HW6 = () => {
     }
     const restore = () => {
         // делают студенты
-
+        setValue(restoreState("hw6-editable-span-value", ""));
     }
 
     return (
@@ -27,7 +27,7 @@ const HW6 = () => {
             <div className={s2.hwTitle}>Homework #6</div>
 
             {/*демонстрация возможностей компоненты:*/}
-            <div className={s2.hw}>
+            <div className={`${s2.hw} ${s2.hw_6}`}>
                 <div className={s.editableSpanContainer}>
                     <SuperEditableSpan
                         id={'hw6-spanable-input'}
@@ -56,5 +56,3 @@ const HW6 = () => {
         </div>
     )
 }
-
-export default HW6
