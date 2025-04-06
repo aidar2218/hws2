@@ -27,7 +27,7 @@ const initialPeople: UserType[] = [
     {_id: 5, name: 'Ирина', age: 55},
 ]
 
-const HW8 = () => {
+export const HW8 = () => {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
     const [currentSort, setCurrentSort] = useState('')
 
@@ -43,7 +43,7 @@ const HW8 = () => {
     const sortDown = () => {
         setPeople(
             homeWorkReducer(initialPeople, {type: 'sort', payload: 'down'})
-        ) // в обратном порядке a.name < b.name}
+        ) // в обратном порядке a.name < b.name
         setCurrentSort('down')
     }
     const check18 = () => {
@@ -56,7 +56,7 @@ const HW8 = () => {
     return (
         <div id={'hw3'}>
             <div className={s2.hwTitle}>Homework #8</div>
-            <div className={s2.hw}>
+            <div className={`${s2.hw} ${s2.hw_8}`}>
                 <div className={s.container}>
                     <div className={s.buttonsContainer}>
                         <SuperButton
@@ -97,5 +97,3 @@ const HW8 = () => {
         </div>
     )
 }
-
-export default HW8
